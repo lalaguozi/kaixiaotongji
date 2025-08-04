@@ -22,7 +22,5 @@
       "src": "/(.*)",
       "dest": "/client/dist/$1"
     }
-  ],
-  "installCommand": "npm run install:all",
-  "buildCommand": "npm run build"
+  ]
 }
