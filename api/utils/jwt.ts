@@ -17,10 +17,7 @@ export const extractTokenFromHeader = (authHeader: string | undefined): string |
 };
 
 export const generateToken = (payload: JwtPayload): string => {
-    const signOptions: SignOptions = {
-    expiresIn: JWT_EXPIRES_IN,
-  };
-  return jwt.sign(payload, JWT_SECRET, signOptions);
+  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN as any });
 };
 
 export const verifyToken = (token: string): JwtPayload => {
