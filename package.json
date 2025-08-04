@@ -1,0 +1,23 @@
+{
+  "name": "kaixiaotongji",
+  "version": "1.0.0",
+  "description": "日常开销统计管理系统",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "build": "npm run client:build && npm run server:build",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install && cd ../api && npm install",
+    "vercel-build": "npm run install:all && npm run build"
+  },
+  "keywords": ["expense", "tracking", "financial", "management"],
+  "author": "Administrator",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
