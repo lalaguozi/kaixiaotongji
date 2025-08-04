@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import { dbGet, dbRun, createDefaultCategoriesForUser } from '../database';
-import { hashPassword, comparePassword } from '../../shared/utils/password';
-import { generateToken } from '../../shared/utils/jwt';
+import { hashPassword, comparePassword } from '../utils/password';
+import { generateToken } from '../utils/jwt';
 import { User, LoginRequest, RegisterRequest, AuthResponse } from '../../shared/types';
 
 // 用户注册

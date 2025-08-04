@@ -4,13 +4,13 @@ import {
   createCategory, 
   updateCategory, 
   deleteCategory 
-} from '../../server/src/controllers/categoryController';
-import { authenticateToken } from '../../server/src/middleware/auth';
+} from '../controllers/categoryController';
+import { authenticateToken } from '../middleware/auth';
 import { 
   validateCreateCategory, 
   validateUpdateCategory, 
   validateDeleteCategory 
-} from '../../server/src/middleware/validation';
+} from '../middleware/validation';
 
 const router = Router();
 

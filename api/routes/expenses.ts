@@ -5,8 +5,8 @@ import {
   updateExpense, 
   deleteExpense,
   getExpenseById
-} from '../../server/src/controllers/expenseController';
-import { authenticateToken } from '../../server/src/middleware/auth';
+} from '../controllers/expenseController';
+import { authenticateToken } from '../middleware/auth';
 import { 
   validateCreateExpense, 
   validateUpdateExpense, 
@@ -14,7 +14,7 @@ import {
   validateGetExpenseById,
   validatePagination,
   validateExpenseFilters
-} from '../../server/src/middleware/validation';
+} from '../middleware/validation';
 
 const router = Router();
 

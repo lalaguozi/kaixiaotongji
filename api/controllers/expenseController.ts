@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import { dbGet, dbAll, dbRun } from '../database';
 import { ExpenseRecord, CreateExpenseRequest, UpdateExpenseRequest, PaginatedResponse, ExpenseFilters } from '../../shared/types';
-import config from '../../shared/config';
 
 // 获取开销记录列表
 export const getExpenses = async (req: Request, res: Response) => {

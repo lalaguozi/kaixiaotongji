@@ -4,12 +4,12 @@ import {
   getMonthlyComparison, 
   getCategoryTrends,
   getTodayStatistics
-} from '../../server/src/controllers/statisticsController';
-import { authenticateToken } from '../../server/src/middleware/auth';
+} from '../controllers/statisticsController';
+import { authenticateToken } from '../middleware/auth';
 import { 
   validateStatisticsQuery, 
   validateCategoryTrends 
-} from '../../server/src/middleware/validation';
+} from '../middleware/validation';
 
 const router = Router();
 
