@@ -145,8 +145,8 @@ export const updateCategory = async (req: Request, res: Response) => {
     }
 
     // 构建更新语句
-    const updateFields = [];
-    const updateValues = [];
+    const updateFields: string[] = [];
+    const updateValues: any[] = [];
 
     if (name !== undefined) {
       updateFields.push('name = ?');

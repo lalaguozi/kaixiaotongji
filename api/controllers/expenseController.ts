@@ -263,12 +263,12 @@ export const updateExpense = async (req: Request, res: Response) => {
     }
 
     // 构建更新语句
-    const updateFields = [];
-    const updateValues = [];
+    const updateFields: string[] = [];
+    const updateValues: any[] = [];
 
     if (amount !== undefined) {
       updateFields.push('amount = ?');
-      updateValues.push(amount);
+      updateValues.push(amount as number);
     }
     if (description !== undefined) {
       updateFields.push('description = ?');
@@ -290,8 +290,8 @@ export const updateExpense = async (req: Request, res: Response) => {
       });
     }
 
-    updateFields.push('updated_at = CURRENT_TIMESTAMP');
     updateValues.push(expenseId, userId);
+    updateFields.push('updated_at = CURRENT_TIMESTAMP');
 
     await dbRun(
       `UPDATE expense_records SET ${updateFields.join(', ')} WHERE id = ? AND user_id = ?`,

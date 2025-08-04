@@ -70,7 +70,7 @@ export const getStatistics = async (req: Request, res: Response) => {
     }));
 
     // 获取按时间分组的数据
-    let timeGroupData = [];
+    let timeGroupData: any[] = [];
     
     switch (query.period) {
       case 'daily':
@@ -94,7 +94,7 @@ export const getStatistics = async (req: Request, res: Response) => {
             SUM(er.amount) as amount
           FROM expense_records er
           ${whereClause}
-          GROUP BY strftime('%Y-%W', datetime(er.expense_date/1000, 'unixepoch'))
+          GROUP BY strftime('%Y-W%W', datetime(er.expense_date/1000, 'unixepoch'))
           ORDER BY week DESC
           LIMIT 12
         `;
