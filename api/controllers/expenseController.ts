@@ -8,7 +8,7 @@ export const getExpenses = async (req: Request, res: Response) => {
   try {
     const userId = req.user?.userId;
     const page = parseInt(req.query.page as string) || 1;
-    const limit = Math.min(parseInt(req.query.limit as string) || config.defaultPageSize, config.maxPageSize);
+    const limit = Math.min(parseInt(req.query.limit as string) || 20, 100);
     
     // 筛选参数
     const filters: ExpenseFilters = {
